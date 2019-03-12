@@ -3,7 +3,7 @@ package edu.csuft.sort;
 import java.util.Arrays;
 
 public class HeapSort {
-	public static int[] arr = { 2, 5, 3, 5, 5, 2, 5, 7, 3, 4, 9, 4, 6, 10 };
+	public static int[] arr = { 7, 2, 8, 1, 5, 11, 3, 7, 8, 4, 9, 4, 6, 10 };
 
 	public static void heapsort(int[] arr) {
 		if (arr == null || arr.length - 1 < 1)
@@ -18,7 +18,7 @@ public class HeapSort {
 		}
 	}
 
-	//从S的位置开始在S-M范围内保持最大或最小堆
+	//从S的位置开始在S-M范围内保持S子结点的最大或最小堆
 	public static void heapadjust(int[] arr, int s, int m) {
 		int rc = arr[s];
 		for (int j = 2 * s + 1; j <= m; j = j * 2 + 1) {
