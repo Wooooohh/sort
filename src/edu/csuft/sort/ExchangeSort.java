@@ -20,9 +20,8 @@ public class ExchangeSort {
 	}
 
 	// 选择排序
-	public static void Select(int[] arr) {
+	public static void select(int[] arr) {
 		int min;
-
 		for (int i = 0; i < arr.length - 1; i++) {
 			min = i;
 			for (int j = i + 1; j < arr.length; j++) {
@@ -34,7 +33,21 @@ public class ExchangeSort {
 		}
 	}
 
-	public static void Quick(int[] arr) {
+	// 插入排序
+	public static void insert(int[] arr) {
+		int p;
+		int m;
+		for (int i = 1; i < arr.length; i++) {
+			p = i;
+			m = i - 1;
+			while (m >= 0 && arr[p] > arr[m]) {
+				swap(arr, p--, m--);
+			}
+
+		}
+	}
+
+	public static void quick(int[] arr) {
 		if (arr == null || arr.length <= 1)
 			return;
 		queckProcess(arr, 0, arr.length - 1);
@@ -67,8 +80,9 @@ public class ExchangeSort {
 
 	public static void main(String[] args) {
 		// bubbleup(arr);
-		// Quick(arr);
-		Select(arr);
+		// quick(arr);
+		// select(arr);
+		insert(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 }
